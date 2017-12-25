@@ -14,10 +14,10 @@ export class ButtonsComponent implements OnInit {
   }
 
   onIncrement(): void {
-    this.behaviorService.increment(++this.value);
+    this.behaviorService.operation(++this.value);
   }
 
   onDecrement(): void {
-    this.behaviorService.decrement(--this.value);
+    this.behaviorService.operation(--this.value);
   }
 }

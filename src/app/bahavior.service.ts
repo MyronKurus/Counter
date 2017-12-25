@@ -6,11 +6,7 @@ import {Subject} from 'rxjs/Subject';
 export class BehaviorService {
   private subject = new Subject<any>();
 
-  increment(num: number): void {
-    this.subject.next(num);
-  }
-
-  decrement(num: number): void {
+  operation(num: number): void {
     this.subject.next(num);
   }
 
