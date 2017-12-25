@@ -5,6 +5,8 @@ import {BehaviorService} from './bahavior.service';
 import { AppComponent } from './app.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { DisplayComponent } from './display/display.component';
+import {StoreModule} from '@ngrx/store';
+import {counterReducer} from './counter.reducer';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { DisplayComponent } from './display/display.component';
   ],
   imports: [
     BrowserModule,
+    StoreModule.provideStore({counter: counterReducer})
   ],
   providers: [BehaviorService],
   bootstrap: [AppComponent]
