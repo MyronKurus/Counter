@@ -4,6 +4,9 @@ import {Subscription} from 'rxjs/Subscription';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 
+interface AppState {
+  value: number;
+}
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
@@ -11,9 +14,9 @@ import {Observable} from 'rxjs/Observable';
 })
 export class DisplayComponent {
 
-  value: Observable<number>;
+  value: Observable<any>;
 
-  constructor(private store: Store<number>) {
+  constructor(private store: Store<AppState>) {
     this.value = this.store.select(state => state);
   }
 
