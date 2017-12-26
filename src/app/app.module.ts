@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BehaviorService} from './bahavior.service';
+import { BehaviorService } from './features/behavior.service';
 
 import { AppComponent } from './app.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { DisplayComponent } from './display/display.component';
-import {StoreModule} from '@ngrx/store';
-import {counterReducer} from './counter.reducer';
+import { ButtonsComponent } from './features/buttons.component';
+import { DisplayComponent } from './features/display.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +13,7 @@ import {counterReducer} from './counter.reducer';
     DisplayComponent,
   ],
   imports: [
-    BrowserModule,
-    StoreModule.provideStore({counter: counterReducer})
+    BrowserModule
   ],
   providers: [BehaviorService],
   bootstrap: [AppComponent]
